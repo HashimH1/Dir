@@ -18,6 +18,12 @@ Route::group(['prefix' =>LaravelLocalization::setLocale(),
 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 ], function() {
 
+
+    Route::get('send', [\App\Http\Controllers\WelcomeController::class, 'mailSend']);
+
+
+
+
       Route::get('login', [\App\Http\Controllers\panel\authController::class, 'index'])->name('login');
 
       Route::post('login/store', [\App\Http\Controllers\panel\authController::class, 'store'])->name('login.store');
